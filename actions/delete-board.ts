@@ -3,7 +3,10 @@
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
-export async function deleteBoard(id: string) {
+interface deleteBoardProps{
+  id:string
+}
+export async function deleteBoard({id}:deleteBoardProps) {
   await db.board.delete({
     where: {
       id
