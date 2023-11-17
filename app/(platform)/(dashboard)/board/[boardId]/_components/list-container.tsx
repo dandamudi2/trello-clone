@@ -9,7 +9,7 @@ interface ListContainerProps {
   boardId: string;
 }
 
-export const ListContainer = ({ data, boardId }: ListContainerProps) => {
+const ListContainer = ({ data, boardId }: ListContainerProps) => {
   return (
     <ol>
       <ListForm />
@@ -17,3 +17,5 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
     </ol>
   );
 };
+
+export default ListContainer;
