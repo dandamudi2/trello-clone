@@ -18,15 +18,15 @@ interface BoardOptionsProps {
 }
 
 export const BoardOptions = ({ id }: BoardOptionsProps) => {
-  // const { execute, isLoading } = useAction(deleteBoard, {
-  //   onError: (error) => {
-  //     toast.error(error);
-  //   },
-  // });
+  const { execute, isLoading } = useAction(deleteBoard, {
+    onError: (error) => {
+      toast.error(error);
+    },
+  });
 
-  // const onDelete = () => {
-  //   execute({ id });
-  // };
+  const onDelete = () => {
+    execute({ id });
+  };
 
   return (
     <Popover>
@@ -47,15 +47,16 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
             <X className="h-4 w-4" />
           </Button>
         </PopoverClose>
-        <span>Delete</span>
-        {/* <Button
-          variant="ghost"
-          onClick={onDelete}
-          disabled={isLoading}
-          className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
-        >
-          Delete this board
-        </Button> */}
+        {
+          <Button
+            variant="ghost"
+            onClick={onDelete}
+            disabled={isLoading}
+            className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+          >
+            Delete this board
+          </Button>
+        }
       </PopoverContent>
     </Popover>
   );
